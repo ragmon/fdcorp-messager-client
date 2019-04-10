@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <base href=".">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="msapplication-tap-highlight" content="no"/>
+    <meta name="viewport"
+          content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width"/>
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+<!--    <meta http-equiv="Content-Security-Policy"-->
+<!--          content="default-src * 'unsafe-inline' gap:; style-src 'self' 'unsafe-inline'; media-src *"/>-->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link href="css/chat.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <title>Hello World</title>
+</head>
+
+<body>
+
+<!-- Chat Header -->
+<nav class="navbar navbar-light bg-light fixed-top chat-header">
+    <a class="navbar-brand">FDCorp Chat</a>
+</nav>
+
+<!-- Chat Display -->
+<div class="chat display" style="display: none">
+    <!-- Message list -->
+    <div class="container-fluid message-list">
+
+        <div class="row message">
+            <div class="col-md-10"><span class="message-sender">Ivanov Ivan</span></div>
+            <div class="col-md-2 col-message-timestamp"><span class="message-timestamp">16:20 01.05.2019</span></div>
+            <div class="col-md-12 message-content">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                It has survived not only five centuries, but also the leap into electronic typesetting,
+                remaining essentially unchanged. It was popularised in the 1960s with the release of
+                Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+                software like Aldus PageMaker including versions of Lorem Ipsum.
+            </div>
+        </div>
+        <div class="row message">
+            <div class="col-md-10"><span class="message-sender sender-me">Arthur Ragimov</span></div>
+            <div class="col-md-2 col-message-timestamp"><span class="message-timestamp">16:20 01.05.2019</span></div>
+            <div class="col-md-12 message-content">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                It has survived not only five centuries, but also the leap into electronic typesetting,
+                remaining essentially unchanged. It was popularised in the 1960s with the release of
+                Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+                software like Aldus PageMaker including versions of Lorem Ipsum.
+            </div>
+        </div>
+        <div class="row message">
+            <div class="col-md-10"><span class="message-sender">Ivanov Ivan</span></div>
+            <div class="col-md-2 col-message-timestamp"><span class="message-timestamp">16:20 01.05.2019</span></div>
+            <div class="col-md-12 message-content">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                It has survived not only five centuries, but also the leap into electronic typesetting,
+                remaining essentially unchanged. It was popularised in the 1960s with the release of
+                Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+                software like Aldus PageMaker including versions of Lorem Ipsum.
+            </div>
+        </div>
+        <div class="row message">
+            <div class="col-md-10"><span class="message-sender">Ivanov Ivan</span></div>
+            <div class="col-md-2 col-message-timestamp"><span class="message-timestamp">16:20 01.05.2019</span></div>
+            <div class="col-md-12 message-content">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                It has survived not only five centuries, but also the leap into electronic typesetting,
+                remaining essentially unchanged. It was popularised in the 1960s with the release of
+                Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+                software like Aldus PageMaker including versions of Lorem Ipsum.
+            </div>
+        </div>
+        <div class="row message">
+            <div class="col-md-10"><span class="message-sender">Ivanov Ivan</span></div>
+            <div class="col-md-2 col-message-timestamp"><span class="message-timestamp">16:20 01.05.2019</span></div>
+            <div class="col-md-12 message-content">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                It has survived not only five centuries, but also the leap into electronic typesetting,
+                remaining essentially unchanged. It was popularised in the 1960s with the release of
+                Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+                software like Aldus PageMaker including versions of Lorem Ipsum.
+            </div>
+        </div>
+        <div class="row message">
+            <div class="col-md-10"><span class="message-sender">Ivanov Ivan</span></div>
+            <div class="col-md-2 col-message-timestamp"><span class="message-timestamp">16:20 01.05.2019</span></div>
+            <div class="col-md-12 message-content">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                It has survived not only five centuries, but also the leap into electronic typesetting,
+                remaining essentially unchanged. It was popularised in the 1960s with the release of
+                Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+                software like Aldus PageMaker including versions of Lorem Ipsum.
+            </div>
+        </div>
+        <div class="row message">
+            <div class="col-md-10"><span class="message-sender">Ivanov Ivan</span></div>
+            <div class="col-md-2 col-message-timestamp"><span class="message-timestamp">16:20 01.05.2019</span></div>
+            <div class="col-md-12 message-content">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                It has survived not only five centuries, but also the leap into electronic typesetting,
+                remaining essentially unchanged. It was popularised in the 1960s with the release of
+                Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+                software like Aldus PageMaker including versions of Lorem Ipsum.
+            </div>
+        </div>
+        <div class="row message">
+            <div class="col-md-10"><span class="message-sender">Ivanov Ivan</span></div>
+            <div class="col-md-2 col-message-timestamp"><span class="message-timestamp">16:20 01.05.2019</span></div>
+            <div class="col-md-12 message-content">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                It has survived not only five centuries, but also the leap into electronic typesetting,
+                remaining essentially unchanged. It was popularised in the 1960s with the release of
+                Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+                software like Aldus PageMaker including versions of Lorem Ipsum.
+            </div>
+        </div>
+        <div class="row message">
+            <div class="col-md-10"><span class="message-sender">Ivanov Ivan</span></div>
+            <div class="col-md-2 col-message-timestamp"><span class="message-timestamp">16:20 01.05.2019</span></div>
+            <div class="col-md-12 message-content">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                It has survived not only five centuries, but also the leap into electronic typesetting,
+                remaining essentially unchanged. It was popularised in the 1960s with the release of
+                Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+                software like Aldus PageMaker including versions of Lorem Ipsum.
+            </div>
+        </div>
+        <div class="row message">
+            <div class="col-md-10"><span class="message-sender">Ivanov Ivan</span></div>
+            <div class="col-md-2 col-message-timestamp"><span class="message-timestamp">16:20 01.05.2019</span></div>
+            <div class="col-md-12 message-content">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                It has survived not only five centuries, but also the leap into electronic typesetting,
+                remaining essentially unchanged. It was popularised in the 1960s with the release of
+                Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+                software like Aldus PageMaker including versions of Lorem Ipsum.
+            </div>
+        </div>
+        <div class="row message">
+            <div class="col-md-10"><span class="message-sender">Ivanov Ivan</span></div>
+            <div class="col-md-2 col-message-timestamp"><span class="message-timestamp">16:20 01.05.2019</span></div>
+            <div class="col-md-12 message-content">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                It has survived not only five centuries, but also the leap into electronic typesetting,
+                remaining essentially unchanged. It was popularised in the 1960s with the release of
+                Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+                software like Aldus PageMaker including versions of Lorem Ipsum.
+            </div>
+        </div>
+        <div class="row message">
+            <div class="col-md-10"><span class="message-sender">Ivanov Ivan</span></div>
+            <div class="col-md-2 col-message-timestamp"><span class="message-timestamp">16:20 01.05.2019</span></div>
+            <div class="col-md-12 message-content">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                It has survived not only five centuries, but also the leap into electronic typesetting,
+                remaining essentially unchanged. It was popularised in the 1960s with the release of
+                Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+                software like Aldus PageMaker including versions of Lorem Ipsum.
+            </div>
+        </div>
+        <div class="row message">
+            <div class="col-md-10"><span class="message-sender">Ivanov Ivan</span></div>
+            <div class="col-md-2 col-message-timestamp"><span class="message-timestamp">16:20 01.05.2019</span></div>
+            <div class="col-md-12 message-content">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                It has survived not only five centuries, but also the leap into electronic typesetting,
+                remaining essentially unchanged. It was popularised in the 1960s with the release of
+                Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+                software like Aldus PageMaker including versions of Lorem Ipsum.
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Chat Bottom -->
+    <div class="container-fluid fixed-bottom chat-bottom">
+        <div class="row">
+            <div class="col-md-10">
+                <textarea class="form-control message-input" onkeypress="chat._onInputKeypress(event)"></textarea>
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-block btn-primary btn-send-message" onclick="chat.sendMessage()">Send</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Settings Display -->
+<div class="chat-settings display" style="display: none">
+    <div class="container-fluid">
+        <form class="chat-settings-form">
+            <div class="alert alert-warning" style="display: none">
+                <strong>Warning!</strong> <span></span>
+            </div>
+            <div class="form-group">
+                <label for="nickname">Nickname</label>
+                <input type="text" class="form-control" id="nickname" name="nickname" placeholder="dick cheney" required>
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-lg btn-block btn-success" onclick="settings.onSubmit()">Join</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Welcome Display -->
+<div class="welcome display" style="display: none">
+    <div class="welcome-image"></div>
+    <div class="welcome-text">YO</div>
+</div>
+
+
+<script type="text/javascript" src="cordova.js"></script>
+<!--<script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>-->
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="js/welcome.js"></script>
+<script type="text/javascript" src="js/settings.js"></script>
+<script type="text/javascript" src="js/chat.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+
+<!-- Chat Message Template -->
+<script type="text/template" class="message-template">
+    <div class="row message">
+        <div class="col-md-10"><span class="message-sender">Ivanov Ivan</span></div>
+        <div class="col-md-2 col-message-timestamp"><span class="message-timestamp">16:20 01.05.2019</span></div>
+        <div class="col-md-12 message-content">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+            when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+            It has survived not only five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged. It was popularised in the 1960s with the release of
+            Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+            software like Aldus PageMaker including versions of Lorem Ipsum.
+        </div>
+    </div>
+</script>
+
+<!-- Application entry point -->
+<script type="text/javascript">
+    app.initialize();
+</script>
+
+</body>
+</html>
